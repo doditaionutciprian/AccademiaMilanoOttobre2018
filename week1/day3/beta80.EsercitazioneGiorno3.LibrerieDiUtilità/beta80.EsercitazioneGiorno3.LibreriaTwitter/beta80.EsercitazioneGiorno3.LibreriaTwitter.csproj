@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B339CF5A-6618-4796-BDCC-B47656047428}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>beta80.EsercitazioneGiorno3.TestLibreria</RootNamespace>
-    <AssemblyName>beta80.EsercitazioneGiorno3.TestLibreria</AssemblyName>
+    <ProjectGuid>{96D1227B-4B8D-4192-8028-85C4F4FF14B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>beta80.EsercitazioneGiorno3.LibreriaTwitter</RootNamespace>
+    <AssemblyName>beta80.EsercitazioneGiorno3.LibreriaTwitter</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,21 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Modelli\Like.cs" />
+    <Compile Include="Modelli\Retweet.cs" />
+    <Compile Include="Modelli\Tweet.cs" />
+    <Compile Include="Modelli\UtenteTwitter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Twitter\GeneratoreTwitter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\beta80.EsercitazioneGiorno3.LibreriaTwitter\beta80.EsercitazioneGiorno3.LibreriaTwitter.csproj">
-      <Project>{96d1227b-4b8d-4192-8028-85c4f4ff14b2}</Project>
-      <Name>beta80.EsercitazioneGiorno3.LibreriaTwitter</Name>
-    </ProjectReference>
     <ProjectReference Include="..\beta80.EsercitazioneGiorno3.LibrerieDiUtilità\beta80.EsercitazioneGiorno3.LibrerieDiUtilità.csproj">
       <Project>{4c8a1aec-8104-41ab-a61b-5baed7b3546f}</Project>
       <Name>beta80.EsercitazioneGiorno3.LibrerieDiUtilità</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

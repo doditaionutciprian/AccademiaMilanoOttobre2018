@@ -1,4 +1,5 @@
-﻿using beta80.EsercitazioneGiorno3.LibrerieDiUtilità;
+﻿using beta80.EsercitazioneGiorno3.LibreriaTwitter.Twitter;
+using beta80.EsercitazioneGiorno3.LibrerieDiUtilità;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,6 +57,16 @@ namespace beta80.EsercitazioneGiorno3.TestLibreria
             Console.WriteLine(ContatoreTrue);
             Console.WriteLine(ContatoreFalse);
             Console.ReadLine();
+        }
+
+        static void TestTwitter()
+        {
+            var generatoretwitter = new GeneratoreTwitter();
+            var utente1 = generatoretwitter.Utente();
+            var utente2= generatoretwitter.Utente();
+            var tweet1 = generatoretwitter.Tweet(utente2);
+            var like1 = utente1.MiPiace2(tweet1);
+            tweet1.AggiungiLike(like1);
         }
 
         
