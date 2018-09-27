@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 
 namespace EsercitazioneCollezioni
@@ -8,25 +9,25 @@ namespace EsercitazioneCollezioni
     {
         static void Main(string[] args)
         {
-            var Array = new ArrayList();
+            //var Array = new ArrayList();
 
 
-            for (int i = 0; i < 3000; i++)
-            {
-                Array.Add(new Studente { Id = i, Nome = i.ToString() });
-            }
-            Array.Add("Stringa");
+            //for (int i = 0; i < 3000; i++)
+            //{
+            //    Array.Add(new Studente { Id = i, Nome = i.ToString() });
+            //}
+            //Array.Add("Stringa");
 
-            foreach (var item in Array)
-            {
-                if (item.GetType().ToString() == "EsercitazioneCollezioni.Studente")
-                {
-                    var p1 = item as Studente;
-                    p1.FaiQualcosa();
-                }
-            }
+            //foreach (var item in Array)
+            //{
+            //    if (item.GetType().ToString() == "EsercitazioneCollezioni.Studente")
+            //    {
+            //        var p1 = item as Studente;
+            //        p1.FaiQualcosa();
+            //    }
+            //}
 
-            Console.WriteLine(Array[0]);
+            //Console.WriteLine(Array[0]);
 
             //---------------------------------------------------------------------
             //var Hash = new Hashtable();
@@ -65,6 +66,60 @@ namespace EsercitazioneCollezioni
 
             //Coda.Dequeue();
             //Stack.Pop();
+
+            var Array = new ArrayList();
+            var ListaStudenti = new List<Studente>();
+            var ListaStringhe = new List<string>();
+
+
+            for (int i = 0; i < 3000; i++)
+            {
+                Array.Add(new Studente { Id = i, Nome = i.ToString() });
+                ListaStudenti.Add(new Studente { Id = i, Nome = i.ToString() });
+                //ListaStudenti.Add("Studente");
+                
+            }
+            Array.Add("Stringa");
+            ListaStringhe.Add("Stringa");
+
+            foreach (var item in ListaStudenti)
+            {
+                item.FaiQualcosa();
+            }
+
+            var u = ListaStudenti[0];
+            var Array2 = ListaStudenti.ToArray();
+
+            var CodaInteri = new Queue<int>();
+
+            for (int i = 0; i < 3000; i++)
+            {
+                CodaInteri.Enqueue(i);
+
+            }
+
+            var StackStringhe = new Stack<string>();
+            StackStringhe.Push("1");
+            //StackStringhe.Push(1); errore
+
+            var Dizionario = new Dictionary<int, Studente>();
+            Dizionario.Add(1, new Studente { MediaVoti = 10 });
+
+            var pippo = Dizionario[1];
+            pippo.FaiQualcosa();
+            Console.WriteLine(Dizionario.ContainsKey(2));
+
+            //var iq = new Nullable<int>();
+            //iq = 10;
+            //if (iq.HasValue)
+            //{
+            //    Console.WriteLine(iq.Value);
+            //}
+
+            if (pippo.MediaVoti.HasValue)
+            {
+                Console.WriteLine(pippo.MediaVoti.Value);
+            }
 
             Console.ReadLine();
         }
